@@ -30,17 +30,7 @@ public class WelcomeMenu implements MainMenu {
 
 		if ("login".equals(answer)) {
 			nextMenu = loginMenu;
-			//loginMenu =addDeptMenu;
-//			System.out.println("Would you like to add Department yes or no?");
-//			String answer1 = scan.nextLine();
-//			
-//			if ("yes".equals(answer1)) {
-//				nextMenu = addDeptMenu;
-//			} else {
-//				
-//				nextMenu = this;
-//			}
-//			
+		
 		}
 		
 		else if ("register".equals(answer)) {
