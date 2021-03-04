@@ -11,11 +11,13 @@ import com.revature.service.UserService;
 public class LoginMenu implements MainMenu {
 
 	private UserService userservice;
-	//private  AddDeptMenu deptmenu;
+	private  AddDeptMenu deptmenu;
 	
-	public LoginMenu(UserService authService) {
+	private MainMenu nextMenu;
+	
+	public LoginMenu(UserService authService, AddDeptMenu deptmenu) {
 		super();
-		//this.deptmenu = deptmenu;
+		this.deptmenu = deptmenu;
 		this.userservice = authService;
 	}
 
@@ -39,7 +41,7 @@ public class LoginMenu implements MainMenu {
 
 	@Override
 	public MainMenu advance() {
-		return null;
+		return nextMenu;
 	}
 
 	@Override
@@ -54,6 +56,13 @@ public class LoginMenu implements MainMenu {
 		try {
 			userservice.authenticateUser(user);
 			System.out.println("Login successful...");
+			
+			System.out.println("Would you like to add Department yes or no?");
+			String answer1 = scan.nextLine();
+			
+			if ("yes".equals(answer1)) {
+				nextMenu = deptmenu;
+			}
 			//throw new Error();
 		} catch (UserNotFound e) {
 			System.out.println("Username does not exist.  Please register an account.");

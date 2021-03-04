@@ -31,16 +31,16 @@ public class WelcomeMenu implements MainMenu {
 		if ("login".equals(answer)) {
 			nextMenu = loginMenu;
 			//loginMenu =addDeptMenu;
-			System.out.println("Would you like to add Department yes or no?");
-			String answer1 = scan.nextLine();
-			
-			if ("yes".equals(answer1)) {
-				nextMenu = addDeptMenu;
-			} else {
-				System.out.println("----------------LMS--------------------");
-				nextMenu = this;
-			}
-			
+//			System.out.println("Would you like to add Department yes or no?");
+//			String answer1 = scan.nextLine();
+//			
+//			if ("yes".equals(answer1)) {
+//				nextMenu = addDeptMenu;
+//			} else {
+//				
+//				nextMenu = this;
+//			}
+//			
 		}
 		
 		else if ("register".equals(answer)) {
@@ -53,19 +53,7 @@ public class WelcomeMenu implements MainMenu {
 		
 		
 
-		/*if ("login".equals(answer)) {
-			nextMenu = loginMenu;
-			System.out.println("Would you like to add Department yes or no?");
-			String answer1 = scan.nextLine();
-			// Dept dept = new Dept(answer1);
-			// String answer1=null;
-			if ("yes".equals(answer1)) {
-				nextMenu = addDeptMenu;
-			} else {
-				System.out.println("----------------LMS--------------------");
-				nextMenu = this;
-			}
-		}*/
+		
 	}
 
 	@Override

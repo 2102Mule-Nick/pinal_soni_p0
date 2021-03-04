@@ -30,14 +30,15 @@ public class AddDeptMenu implements MainMenu {
 	public void displayOptions() {
 		Dept dept = new Dept();
 		System.out.println("Please enter a Department Id:");
-		dept.setDeptId(scan.nextInt());
+		int did =scan.nextInt();
+		dept.setDeptId(did);
 		scan.nextLine();
 		System.out.println("Please enter a Department Name:");
 		dept.setDeptName(scan.nextLine());
 		
 				deptService.AddDept(dept);			
 			
-				nextMenu = nextMenu;
+				nextMenu = welcomeMenu;
 		
 		
 	}
@@ -50,14 +51,13 @@ public class AddDeptMenu implements MainMenu {
 
 	@Override
 	public Scanner getScanner() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.scan;
 	}
 
 	@Override
 	public void setScanner(Scanner scan) {
 		// TODO Auto-generated method stub
-		
+		this.scan = scan;
 	}
 	
 	

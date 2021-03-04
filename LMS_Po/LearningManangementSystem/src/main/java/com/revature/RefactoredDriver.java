@@ -47,13 +47,13 @@ public class RefactoredDriver {
 		MainMenu register = new RegistrationMenu();
 
 		//for add department
-		MainMenu addDept =new AddDeptMenu();
+		AddDeptMenu addDept =new AddDeptMenu();
 		
 		MainMenu regiTeacher =new TeacherRegiMenu();
 		
 		
 		
-		MainMenu login = new LoginMenu(userService);
+		MainMenu login = new LoginMenu(userService, addDept);
 		
 		MainMenu welcomeMenu = new WelcomeMenu(login, register,addDept,regiTeacher);
 		
@@ -63,6 +63,7 @@ public class RefactoredDriver {
 		
 		((RegistrationMenu)register).setAuthService(userService);
 		((AddDeptMenu)addDept).setDeptService(deptService);
+		addDept.setScanner(scan);
 		((TeacherRegiMenu)regiTeacher).setTeacherService(teacherService);
 		
 		

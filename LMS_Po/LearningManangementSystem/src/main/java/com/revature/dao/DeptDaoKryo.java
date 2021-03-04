@@ -55,4 +55,10 @@ public class DeptDaoKryo implements DeptDao {
 		
 	}
 
+	public DeptDaoKryo() {
+		super();
+		kryo.register(Dept.class);
+
+	}
+
 }
